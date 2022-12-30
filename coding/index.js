@@ -1,10 +1,11 @@
 let container = document.getElementById("container");
-// container.addEventListener("click", myfunc);
-
-window.onload = myfunc();
+container.addEventListener("click", myfunc);
+//deployed link for frontend =>
+//deployed link for backend => https://macserver.onrender.com/posts
+// window.onload = myfunc();
 async function myfunc() {
   try {
-    let res = await fetch("http://localhost:3000/posts");
+    let res = await fetch("https://macserver.onrender.com/posts");
     let data = await res.json();
     console.log(data);
 
