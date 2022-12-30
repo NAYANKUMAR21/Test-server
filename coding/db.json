@@ -1,0 +1,7 @@
+{
+  "posts": [
+    { "name": "nayan", "age": "21", "gender": "Male" },
+    { "name": "kumar", "age": "22", "gender": "Male" },
+    { "name": "hanchate", "age": "23", "gender": "Male" }
+  ]
+}
