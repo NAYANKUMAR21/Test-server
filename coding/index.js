@@ -1,6 +1,6 @@
 let container = document.getElementById("container");
 container.addEventListener("click", myfunc);
-//deployed link for frontend =>
+//deployed link for frontend => https://effulgent-mooncake-ff9ef7.netlify.app/
 //deployed link for backend => https://macserver.onrender.com/posts
 // window.onload = myfunc();
 async function myfunc() {
