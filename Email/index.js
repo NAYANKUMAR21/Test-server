@@ -3,15 +3,17 @@ const express = require("express");
 const emailModel = require("./Emial.model");
 const cors = require("cors");
 const app = express();
-app.use(express.json());
-app.use(cors());
+const authRouter = require("./login/login.router");
+
 const connect = async () => {
   mongoose.set("strictQuery", false);
   return mongoose.connect(
     "mongodb+srv://NAYAN:NAYAN@cluster0.u60zxbv.mongodb.net/PORTFOLIO?retryWrites=true&w=majority"
   );
 };
-
+app.use(express.json());
+app.use(cors());
+app.use("/auth", authRouter);
 app.post("/", async (req, res) => {
   console.log(req.body);
   const { name, email, body } = req.body;
