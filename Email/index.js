@@ -12,15 +12,6 @@ const connect = async () => {
   );
 };
 
-app.get("/", async (req, res) => {
-  try {
-    const mails = await emailModel.find();
-    return res.status(200).send(mails);
-  } catch (er) {
-    return res.status(404).send(er.message);
-  }
-});
-
 app.post("/", async (req, res) => {
   console.log(req.body);
   const { name, email, body } = req.body;
@@ -31,6 +22,14 @@ app.post("/", async (req, res) => {
     const newMail = await emailModel({ name, email, body });
     await newMail.save();
     return res.status(201).send("Email Sent Successfully");
+  } catch (er) {
+    return res.status(404).send(er.message);
+  }
+});
+app.get("/", async (req, res) => {
+  try {
+    const mails = await emailModel.find();
+    return res.status(200).send(mails);
   } catch (er) {
     return res.status(404).send(er.message);
   }
